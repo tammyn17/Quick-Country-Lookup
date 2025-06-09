@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="country-card">
+  <div class="country-header">
+    <h2>{{ name }}</h2>
+    <img src="{{ flag_url }}" alt="Flag of {{ name }}">
+  </div>
+  <p><strong>Capital:</strong> {{ capital }}</p>
+  <p><strong>Population:</strong> {{ population }}</p>
+  <p><strong>Currency:</strong> {{ currencies }}</p>
+  <p><strong>Language:</strong> {{ languages }}</p>
+  <div class="weather-box">
+  <p class="weather-label">Weather</p>
+  <div class="weather-temp">
+    <p>{{ temp }}°C</p>
+    <img src="http://openweathermap.org/img/wn/{{ icon }}@2x.png" alt="Weather icon">
+  </div>
+</div>
+</div>
+{% endblock %}
+

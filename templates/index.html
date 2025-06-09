@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}Quick Country Lookup{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Quick Country Lookup</h1>
+  <form action="/submit" method="POST">
+    <label for="country">Enter a country name:</label>
+    <input type="text" id="country" name="country" required>
+    <button type="submit">Search</button>
+  </form>
+  {% if error %}
+    <p>{{ error }}</p>
+  {% endif %}
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>
